@@ -7,8 +7,8 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,13 +24,12 @@ header {
 
 .logo img {
     height: 80px;
-
 }
 
 .navbar {
     background-color: #1B1D20;
     font-size: 1.3em;
-    width: 100vw;
+    width: 100%;
     height: 80px;
     padding: 20px;
 
@@ -132,9 +131,6 @@ header {
 
     align-items: center;
     justify-items: center;
-    min-width: 100vw;
-
-
 }
 
 .informacoes {
@@ -189,20 +185,16 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.31);
 }
 
-
 main {
     display: grid;
     
-    min-width: 100vw;
     min-height: 100vh;
     background-color: #383c41;
-    padding: 20px;
 
     grid-template-columns: 40px 1fr 2fr 40px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1.5fr 1fr;
 
     gap: 20px;
-    
 }
 
 .sobre {
@@ -213,7 +205,8 @@ main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 40px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .sobre > h1 {
@@ -223,11 +216,11 @@ main {
 }
 
 .sobre > p {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
-
 #mypic img {
+    border: solid black 2px;
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -236,30 +229,46 @@ main {
 
 .projetos {
     grid-column: 3 / 4;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.projetos p {
+    font-size: 1em;
+}
+
+.projetos > h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-
+    gap: 10px;
     grid-auto-rows: minmax(220px, auto);
 }
 
 .project-card {
-    background-color: #125632;
-    border: #1B1D20 2px solid;
+    background-image: url(../images/project-card-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: #2b6e37 2px solid;
     border-radius: 12px;
-    padding: 24px;
-    height: 100%;
+    padding: 20px;
+    height: 90%;
+    width: 90%;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     gap: 10px;
+
+    transition: box-shadow 0.3s ease ,border-color 1s ease;
 }
 
 .project-card h3 {
@@ -269,16 +278,31 @@ main {
 }
 
 .project-card p {
-    font-size: 0.9em;
+    font-size: 0.8em;
+}
+
+.project-card:hover {
+    border: solid rgb(70, 197, 114) 3px;
+    box-shadow: 
+        0px 6px 18px rgba(0,0,0,0.3),
+        0px 3px 8px rgba(0,0,0,0.15);
 }
 
 .actions {
+    background-color: #40b671;
+    border-radius: 5px;
+    align-self: flex-end;
+    padding: 7px;
     margin-top: auto;
-}
 
-.actions a{
     text-decoration: none;
     color: white;
+    font-weight: bolder;
+}
+
+.skills {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
 }
 
 .contato {
@@ -286,10 +310,7 @@ main {
     grid-column: 2 / 3;
 }
 
-.skills {
-    grid-row: 2 / -1;
-    grid-column: 3 / 4;
-}
+
 
 
 
