@@ -6,9 +6,7 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+
 
 body {
     min-height: 100vh;
@@ -16,31 +14,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    height: 100vh;
-    background-color: #383c41;
-    color: #00FF6A;
+.navbar {
+    background-color: #44484a;
+    font-size: 1.3em;
 
-    display: grid;
-    grid-template-rows: 80px 1fr;
+    width: 90%;
+    height: 80px;
+    padding: 20px;
+    
+    border-radius: 16px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 1000;
 }
 
 .logo img {
     height: 80px;
-}
-
-.navbar {
-    background-color: #1B1D20;
-    font-size: 1.3em;
-    width: 100%;
-    height: 80px;
-    padding: 20px;
-
-    display: flex;
-    flex-flow: row nowrap;
-
-    justify-content: space-around;
-    align-items: center;
 }
 
 #navUL {
@@ -129,8 +127,13 @@ header {
 
 
 .header-main {
+    height: 100vh;
+    background-color: #383c41;
+    color: #00FF6A;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #23232a;
 
     align-items: center;
     justify-items: center;
@@ -192,7 +195,7 @@ main {
     display: grid;
     
     min-height: 100vh;
-    background-color: #383c41;
+    background-color: #23232a;
 
     grid-template-columns: 40px 1fr 40px;
     grid-template-rows: repeat(4, 1fr);
@@ -202,36 +205,44 @@ main {
 
 .sobre {
     grid-column: 2 / 3;
-
+    grid-row: 1 / 2;
     padding: 10px;
+
+    text-align: justify;
 
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
-    gap: 20px;
 }
 
-.sobre > h1 {
+.sobre > h2 {
     align-self: flex-start;
+    font-size: 2em;
     font-weight: bold;
     color: rgb(255, 253, 253);
+    align-self: center;
+
+    text-decoration: underline #0FA355 3px;
+    text-underline-offset: 7px;
 }
 
 .sobre > p {
     font-size: 1em;
+    line-height: 1.5;
 }
 
 #mypic img {
     border: solid black 2px;
-    width: 250px;
-    height: 250px;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .projetos {
     grid-column: 2 / 3;
+    grid-row: 3 / 4;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -247,6 +258,11 @@ main {
     color: white;
     font-weight: bold;
     font-size: 2em;
+
+    text-decoration: underline #0FA355 3px;
+    text-underline-offset: 10px;
+
+    align-self: center;
 }
 
 .project-grid {
@@ -309,7 +325,7 @@ main {
 }
 
 .contato {
-    grid-row: 2 / -1;
+    grid-row: 4 / -1;
     grid-column: 2 / 3;
 
     align-self: center;
@@ -322,11 +338,15 @@ main {
     max-width: 80%;
     color: white;
     height: 70%;
+
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .contato h2 {
     margin-bottom: 20px;
     font-size: 2em;
+    align-self: center;
 }
 
 
@@ -366,7 +386,10 @@ main {
     font-size: 0.85em;
     font-weight: bold;
     cursor: pointer;
-    width: 80px;
+    width: 100px;
+    height: 50px;
+
+    align-self: center;
 }
 
 #submit:hover {
