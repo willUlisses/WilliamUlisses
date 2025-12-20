@@ -17,13 +17,12 @@ body {
 }
 
 header {
-    height: 60vh;
+    height: 100vh;
     background-color: #383c41;
     color: #00FF6A;
 
     display: grid;
     grid-template-rows: 80px 1fr;
-
 }
 
 .logo img {
@@ -195,8 +194,8 @@ main {
     min-height: 100vh;
     background-color: #383c41;
 
-    grid-template-columns: 40px 1fr 2fr 40px;
-    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 40px 1fr 40px;
+    grid-template-rows: repeat(4, 1fr);
 
     gap: 20px;
 }
@@ -232,7 +231,7 @@ main {
 }
 
 .projetos {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -305,7 +304,7 @@ main {
 }
 
 .skills {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
 
