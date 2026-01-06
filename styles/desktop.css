@@ -197,7 +197,7 @@ main {
     min-height: 100vh;
     background-color: #23232a;
 
-    grid-template-columns: 40px 1fr 40px;
+    grid-template-columns: 100px 1fr 100px;
     grid-template-rows: repeat(4, 1fr);
 
     gap: 20px;
@@ -259,6 +259,7 @@ main {
     font-weight: bold;
     font-size: 2em;
 
+    margin-bottom: 40px;
     text-decoration: underline #0FA355 3px;
     text-underline-offset: 10px;
 
@@ -270,6 +271,8 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(220px, auto);
+
+    justify-items: center;
 }
 
 .project-card {
@@ -279,13 +282,12 @@ main {
     border: #2b6e37 2px solid;
     border-radius: 12px;
     padding: 20px;
-    height: 90%;
-    width: 90%;
+    height: 95%;
+    width: 70%;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 10px;
 
     transition: box-shadow 0.3s ease ,border-color 1s ease;
 }
@@ -322,7 +324,50 @@ main {
 .skills {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    color: white;
 }
+
+.skills > h2 {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 2em;
+
+    text-decoration: underline #0FA355 3px;
+    text-underline-offset: 6px;
+}
+
+.skills-flex {
+    grid-row: 2 / 3;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.skill-card {
+    background-color: #283629; 
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 50%;
+    max-width: 65%;
+
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.447);
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.skill-card h2 {
+    align-self: center;
+    font-size: 1.3em;
+}
+
 
 .contato {
     grid-row: 4 / -1;
@@ -334,19 +379,23 @@ main {
     background-color: #3f4448;
     padding: 20px;
     border-radius: 10px;
-    min-width: 80%;
-    max-width: 80%;
+    min-width: 50%;
+    max-width: 60%;
     color: white;
     height: 70%;
 
     display: flex;
     flex-flow: column nowrap;
+    justify-content: stretch;
 }
 
 .contato h2 {
     margin-bottom: 20px;
     font-size: 2em;
     align-self: center;
+
+    text-decoration: underline #0FA355 3px;
+    text-underline-offset: 10px;
 }
 
 
@@ -383,11 +432,12 @@ main {
     border: none;
     padding: 7px;
     border-radius: 6px;
-    font-size: 0.85em;
+    font-size: 0.95em;
     font-weight: bold;
     cursor: pointer;
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 60px;
+    margin-top: 48px;
 
     align-self: center;
 }
