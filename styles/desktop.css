@@ -355,11 +355,19 @@ main {
     min-height: 60px;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.447);
-    
+    border: 1px solid transparent;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    transition: background-color 0.5s ease, width 0.5s ease, transform 0.3s ease;
+    transition: background-color 0.5s ease, width 0.5s ease, transform 0.3s ease, border .5s ease;
+}
+
+.skill-card h2 {
+    text-align: center;
+    align-self: center;
+    font-size: 1.3em;
+    margin: 0;
+    transition: margin .5s ease;
 }
 
 .skill-card img {
@@ -371,34 +379,83 @@ main {
 
 .skill-card-image-rotated {
     transform: rotate(-180deg);
+    transition: transform .3s ease;
 }
-
 
 .skill-card-span {
-    background-color: #34495e; 
     width: 80%;
-}
-
-.skill-card h2 {
-    text-align: center;
-    align-self: center;
-    font-size: 1.3em;
-    margin: 0;
-    transition: margin .5s ease;
-}
-
-.skill-card.skill-card-span h2 {
-    margin: 5px;
-}
-
-.skill-card.skill-card-span {
     background-color: #229156;
-    font-weight: bolder;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.31);
     grid-template-rows: 1fr; 
     opacity: 1;
 }
 
+.skill-card-span h2 {
+    margin: 5px;
+}
+
+.skill-card-span + .card-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.card-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    overflow: hidden;
+    transition: grid-template-rows .5s ease-out, opacity .5s ease;
+    margin-bottom: 0;
+}
+
+.content-wrapper {
+    min-height: 0;
+    display: flex;
+    gap: 35px;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+.tech-icon {
+    width: 90px;
+    height: 90px;
+    background-color: #2b3137;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.tech-icon:hover {
+    transform: translateY(-7px);
+    box-shadow: 
+        0px 6px 18px rgba(0,0,0,0.3),
+        0px 3px 8px rgba(0,0,0,0.15);
+    border: 1px solid #00FF6A;
+}
+
+.tech-icon img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+#springboot, #c, #cplusplus, #arduino {
+    width: 50px;
+    height: 50px;
+}
+
+#vscode {
+    width: 60px;
+    height: 60px;
+}
 
 .contato {
     grid-row: 4 / -1;
